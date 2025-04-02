@@ -57,58 +57,100 @@ nav ul li a:hover {
 }
 
 .signup {
-   background: none;
-   border: 2px solid #d16ba5;
-   padding: 8px 15px;
-   cursor: pointer;
-   font-weight: bold;
-   border-radius: 5px;
-   margin-left: 20px;
-   margin-right: 50px;
+  background: none;
+  border: 2px solid #d16ba5;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 50px;
+  width: 110px; /* Atur ukuran tetap */
+  max-width: 100px; /* Pastikan tidak terlalu lebar */
+  text-align: center;
+  display: inline-block;
 }
 
-
-/* Dropdown Navbar */
 .menu-toggle {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    right: 165px;
+  display: none; 
 }
+
+
+
 
 @media (max-width: 768px) {
     header {
         padding: 15px;
+        justify-content: space-between;
     }  
     nav {
-        display: flex;
-        justify-content: flex-end;
-        width: 10%;
-    }
-   nav ul {
-       display: none;
-       flex-direction: column;
-       background: #fff;
-       position: absolute;
-       top: 60px;
-       right: 0;
-       width: 100%;
-       text-align: center;
-       padding: 10px 0;
-       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-       transition: all 0.3s ease-in-out;
-   }
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; /* Lebar nav tetap penuh */
+    position: relative;
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px; /* Supaya tidak terlalu mepet kanan */
+    width: 130px; /* Diperkecil agar tidak terlalu lebar */
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px; /* Membuat sudut lebih lembut */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px); /* Efek naik sedikit saat muncul */
+    margin-left: 20px;
+    margin-right: 54px;
+    margin-top: -24.5px;
+}
+
+/* Saat menu aktif (ditampilkan) */
+nav ul.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+}
    
-   nav ul.active {
-       display: flex;
-   }
-   
-   .menu-toggle {
-       display: block;
-   }
+.menu-toggle {
+  display: block !important;
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #333;
+  margin-right: 20px;
+}
+
+.signup {
+ width: 100%; /* Lebar tombol lebih besar */
+ margin-left: 20px;
+ margin-right: 33px;
+ display: block; /* Agar tombol berada di tengah */
+ text-align: center;
+ padding: 10px 20px; /* Padding lebih besar */
+}
+
+/* Hover pada setiap item menu */
+nav ul li {
+    list-style: none;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+/* Efek hover */
+nav ul li:hover {
+    background: #f7f7f7;
+
 }
 
 
@@ -722,7 +764,8 @@ html {
     .text-section {
         width: 100%;
         padding: 20px; /* Kurangi padding untuk layar kecil */
-        text-align: center; /* Teks di tengah untuk mobile */
+        text-align: left;
+        padding-left: 40px; 
     }
 
     .text-section h2 {

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector("nav ul");
+    const menuItems = document.querySelectorAll("nav ul li a"); // Pilih <a> dalam <li>
 
     // Efek scroll pada header
     function handleScroll() {
@@ -17,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Toggle menu dropdown untuk mobile
-    menuToggle.addEventListener("click", function () {
+    menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation(); // Mencegah klik mempengaruhi elemen lain
         navMenu.classList.toggle("active");
     });
 
@@ -26,5 +28,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
             navMenu.classList.remove("active");
         }
+    });
+
+    // Tutup menu setelah item diklik & arahkan ke halaman lain
+    menuItems.forEach(item => {
+        item.addEventListener("click", function (event) {
+            event.preventDefault(); // Mencegah default link action (jika ingin smooth transition)
+            
+            let targetPage = this.getAttribute("href"); // Ambil URL tujuan
+            navMenu.classList.remove("active"); // Sembunyikan menu
+            
+            // Beri sedikit delay agar efek lebih smooth sebelum navigasi
+            setTimeout(() => {
+                window.location.href = targetPage;
+            }, 30);
+        });
     });
 });
