@@ -35,13 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
         item.addEventListener("click", function (event) {
             event.preventDefault(); // Mencegah default link action (jika ingin smooth transition)
             
-            let targetPage = this.getAttribute("href"); // Ambil URL tujuan
-            navMenu.classList.remove("active"); // Sembunyikan menu
+            let targetId = this.getAttribute("href").substring(1); // Ambil ID target dari href (tanpa tanda #)
+            const targetSection = document.getElementById(targetId); // Dapatkan section berdasarkan ID
             
-            // Beri sedikit delay agar efek lebih smooth sebelum navigasi
-            setTimeout(() => {
-                window.location.href = targetPage;
-            }, 30);
+            navMenu.classList.remove("active"); // Sembunyikan menu
+
+            // Scroll dengan efek halus ke section tujuan
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+            }
         });
+    });
+
+    // Tambahkan event listener untuk tombol "Sign Up" agar menggulir ke section signup
+    const signupButton = document.querySelector(".signup"); // Tombol Sign Up
+    signupButton.addEventListener("click", function () {
+        const signUpSection = document.getElementById("signup");
+        signUpSection.scrollIntoView({ behavior: "smooth" }); // Scroll dengan efek halus ke section signup
     });
 });

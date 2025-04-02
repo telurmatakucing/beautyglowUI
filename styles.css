@@ -58,7 +58,7 @@ nav ul li a:hover {
 
 .signup {
   background: none;
-  border: 2px solid #d16ba5;
+  border: 2px solid #f9e7ea;
   padding: 8px 15px;
   cursor: pointer;
   font-weight: bold;
@@ -69,6 +69,15 @@ nav ul li a:hover {
   max-width: 100px; /* Pastikan tidak terlalu lebar */
   text-align: center;
   display: inline-block;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
+}
+
+.signup:hover {
+  background-color: #2c2c2c; /* Ganti warna latar belakang saat hover */
+  color: #f9e7ea; /* Ubah warna teks saat hover */
+  transform: scale(1.05); /* Membesar sedikit saat hover */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
 }
 
 .menu-toggle {
@@ -76,7 +85,7 @@ nav ul li a:hover {
 }
 
 
-
+/* Responsive header mobile devices */
 
 @media (max-width: 768px) {
     header {
@@ -110,7 +119,7 @@ nav ul {
     margin-top: -24.5px;
 }
 
-/* Saat menu aktif (ditampilkan) */
+
 nav ul.active {
     display: flex;
     opacity: 1;
@@ -153,22 +162,19 @@ nav ul li:hover {
 
 }
 
-
-
-
-
-/* Home Section - Layout Perbaikan */
+/* Home Section  */
 #home {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   width: 100vw;
-   min-height: 100vh;
-   padding-top: 30px;
-   background: #ffdee5;
-   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 30px;
+  background: #f8e1e6; /* Ganti dengan warna baru */
+  text-align: center;
 }
+
 
 .main-content {
    display: flex;
@@ -182,31 +188,50 @@ nav ul li:hover {
    font-size: 36px;
    color: #333;
    margin-bottom: 10px;
+   word-spacing: 2.8px;
 }
 
 .main-content h2 span {
    font-style: italic;
-   color: #d16ba5;
+   color: #333;
    margin-bottom: 15px;
 }
 
 .main-content p {
-   font-size: 16px;
-   color: #555;
-   margin-bottom: 20px;
-   font-family: Arial, sans-serif;
-   margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  overflow-wrap: break-word; /* Pastikan teks tidak terpotong */
+  word-wrap: break-word; /* Kompatibilitas untuk browser lama */
+  white-space: normal; /* Pastikan teks membungkus dengan baik */
+  max-width: 800px; /* Batasi lebar teks agar lebih mudah dibaca */
+  margin: 0 auto;
 }
 
 .shop-btn {
-   background: #d16ba5;
-   color: #fff;
-   border: none;
-   padding: 10px 20px;
-   cursor: pointer;
-   font-size: 16px;
-   border-radius: 5px;
-   margin-bottom: 20px;
+  background: #f8e1e6;
+  color: #2c2c2c;
+  border: 1px solid #2c2c2c; /* Tambahkan border hitam */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 15.5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
+  font-weight: bold;
+
+}
+
+.shop-btn:hover {
+  background: #2c2c2c; /* Background pink muda saat hover */
+  color: #f9e7ea; /* Teks hitam saat hover */
+  transition: background 0.3s, color 0.3s;
+  transform: scale(1.05); /* Membesar sedikit saat hover */
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
 }
 
 .content-image {
@@ -224,56 +249,42 @@ nav ul li:hover {
     margin: 0 auto;
 }
 
+/* Responsif untuk tampilan mobile */
 @media (max-width: 768px) {
-    #home {
-        padding: 20px 5% ;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  #home {
+      padding-top: 20px;  /* Padding atas lebih kecil di mobile */
+  }
 
-    .main-content {
-        max-width: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
- .content-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .content-image img {
-        width: 90%;
-        max-width: 300px;
-        display: block;
-        margin: 0 auto;
-    }
+  .main-content h2 {
+      font-size: 28px; /* Ukuran font judul lebih kecil di mobile */
+      margin-left: -45px;
+  }
+
+  .main-content h2 span {
+      font-size: 20px; /* Ukuran font span lebih kecil */
+  }
+
+  .main-content p {
+    font-size: 14px; /* Ukuran font paragraf lebih kecil */
+    text-align: left; /* Mengatur teks agar rata kiri */
+    word-wrap: break-word; /* Memastikan teks yang panjang melanjutkan ke baris berikutnya */
+    overflow-wrap: break-word; /* Memastikan teks panjang akan memecah dan tidak meluap */
+    width: 90%; /* Agar paragraf tidak meluap dari kontainer */
+    margin-left: 4px;
+ }
+
+  .shop-btn {
+      padding: 8px 16px; /* Button lebih kecil di mobile */
+      font-size: 14px;  /* Ukuran font button lebih kecil */
+      margin-left: -40px;
+  }
+
+  .content-image img {
+      width: 90%; /* Lebar gambar dikurangi agar pas di layar kecil */
+      margin-top: 20px; /* Memberi jarak antara gambar dan elemen lainnya */
+      margin-left: 2px;
+  }
 }
-
-.content-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.content-image img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
-}
-
-    .shop-btn {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
 
 
 
@@ -297,8 +308,11 @@ html {
    padding: 20px 10%;
    margin-top: 30px;
    margin-bottom: 30px;
+   font-size: 18px; /* Ukuran font default */
+   line-height: 1.6; /* Jarak antar baris agar lebih rapi */
 }
 
+/* section about */
 #about {
     background: #f8f8f8;
     min-height: 91vh; /* Tambah tinggi dari sebelumnya 50vh */
@@ -308,7 +322,6 @@ html {
     justify-content: space-between;
     gap: 50px;
 }
-
 
 .about-content {
     flex: 1;
@@ -370,7 +383,7 @@ html {
 
 
 
-/* Responsive styles for mobile devices */
+/* Responsive about for mobile devices */
 @media screen and (max-width: 768px) {
     #about {
       flex-direction: column;
@@ -438,7 +451,7 @@ html {
   
   
 
-/* Styling untuk section services */
+/* section services */
 #services {
     text-align: center;
     padding: 20px 10%;
@@ -451,11 +464,14 @@ html {
     font-weight: bold;
     margin-bottom: 10px;
     margin-top: 0px;
+    word-spacing: 8px; 
 }
 
 .section-title span {
     font-style: italic;
     color: #555;
+    font-size: 42px;
+    
 }
 
 .section-description {
@@ -497,7 +513,7 @@ html {
     display: block;
 }
 
-/* Styling untuk informasi layanan */
+/*  informasi layanan */
 .service-info {
     display: flex;
     flex-direction: column;
@@ -535,7 +551,7 @@ html {
     text-decoration: underline;
 }
 
-/* Responsive styles for mobile devices */
+/* Responsive service mobile devices */
 @media screen and (max-width: 768px) {
     #services {
       padding: 90px 25px;
@@ -574,7 +590,7 @@ html {
     }
   }
   
-/* Styling untuk Place Section */
+/* Place Section */
 #place {
     display: flex;
     justify-content: center;
@@ -639,7 +655,7 @@ html {
 .overlay-text h1 {
     font-family: "Cormorant Garamond", serif;
     font-size: 5rem;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 4px;
     margin: 0;
 }
@@ -675,10 +691,13 @@ html {
 }
 
 .text-section h2 .cursive {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 3.5rem;
-    font-family: "Great Vibes", cursive; /* Hanya ubah font-family ke Great Vibes */
+  font-family: "Cormorant Garamond", serif;
+    font-weight: 450;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #555;
+    
+    text-transform: uppercase;
 }
 
 .text-section p {
@@ -732,7 +751,7 @@ html {
 
 
 
-/* Media Queries untuk Tampilan Mobile */
+/* Place Tampilan Mobile */
 @media (max-width: 768px) {
     /* Ubah background menjadi cream secara keseluruhan */
     #place {
@@ -881,12 +900,15 @@ html {
     transition: background-color 0.3s;
     font-family: "Montserrat", sans-serif;
       box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
   }
   
   .signup-button:hover {
     background-color: #f5c6cb; /* Slightly darker pink on hover */
+    transform: scale(1.05); /* Membesar sedikit saat hover */
   }
   
+  /* Signup Section mobile */
   @media (max-width: 768px) {
     #signup {
         padding: 10px;
@@ -1060,7 +1082,7 @@ html {
     color: #000;
   }
   
-  /* Responsive Styles untuk Mobile */
+  /* Responsive footer Mobile */
   @media screen and (max-width: 768px) {
     /* Menyembunyikan menu navigasi pada mobile */
     .footer-nav {
